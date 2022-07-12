@@ -1,3 +1,4 @@
+import 'package:car_parking/screens/details_screen.dart';
 import 'package:car_parking/screens/log_in_control.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -40,7 +41,12 @@ class ScanScreen extends StatelessWidget {
               height: 50,
               width: 150,
               child: RaisedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: ((context) => DetailScreen())));
+                },
                 color: Colors.blue,
                 child: Text('SCAN THE BOARD'),
               ),

@@ -1,3 +1,5 @@
+import 'package:car_parking/screens/chat_screen.dart';
+import 'package:car_parking/screens/scan_screen.dart';
 import 'package:car_parking/screenss/sign_in_screen.dart';
 import 'package:car_parking/utils/authentication.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -63,7 +65,20 @@ class _UserInfoScreenState extends State<UserInfoScreen> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Row(),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  RaisedButton(
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: ((context) => ScanScreen())));
+                    },
+                    child: Text("NEXT"),
+                  ),
+                ],
+              ),
               _user.photoURL != null
                   ? ClipOval(
                       // radius: 50,
